@@ -28,12 +28,16 @@ namespace vcfh{
     };
 
     struct vcfh_fields{
-        const std::vector<std::string> set_fields;
+        std::vector<std::string> set_fields;
         std::vector<std::string> opt_fields;
     };
 
+
     class Header{
+
         public:
+            Header();
+            ~Header();
             void set_reference(std::string ref_file);
             void set_date();
             void set_source(std::string s);
@@ -43,10 +47,10 @@ namespace vcfh{
             void add_filter(vcfh_filter filter);
             void add_format(vcfh_format format);
             void add_field(std::string field);
-            std::string to_string();
-            friend std::ostream& operator<<(std::ostream& os, Header h);
+            std::string to_string() const;
 
         private:    
+            std::string get_fields() const;
             std::string make_date();
             vcfh_fields my_header_fields;
             std::string my_reference;
@@ -62,4 +66,6 @@ namespace vcfh{
             std::string compse_formats();
             std::string compose_fields();
     };
-}
+
+    std::ostream& operator<<(std::ostream& os, const Header& h);
+};
