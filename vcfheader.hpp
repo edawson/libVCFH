@@ -3,18 +3,28 @@
 #include <map>
 #include <ctime>
 #include <ostream>
+#include <iostream>
 
 namespace vcfh{
     struct vcfh_info{
-
+        std::string id;
+        std::string number;
+        std::string type;
+        std::string description;
     };
 
     struct vcfh_format{
-
+        std::string id;
+        std::string number;
+        std::string type;
+        std::string description;
     };
 
     struct vcfh_filter{
-
+        std::string id;
+        std::string number;
+        std::string type;
+        std::string description;
     };
 
     struct vcfh_fields{
@@ -26,9 +36,10 @@ namespace vcfh{
         public:
             void set_reference(std::string ref_file);
             void set_date();
-            std::string set_source();
+            void set_source(std::string s);
             void set_contig(std::string contig);
             void add_info(vcfh_info info);
+            void set_version(std::string version);
             void add_filter(vcfh_filter filter);
             void add_format(vcfh_format format);
             void add_field(std::string field);
@@ -37,14 +48,18 @@ namespace vcfh{
 
         private:    
             std::string make_date();
-            vcfh_fields header_fields;
-            std::string reference;
-            std::string date;
-            std::string format;
-            std::string contig;
-            std::vector<vcfh_info> infos;
-            std::vector<vcfh_format> formats;
-            std::vector<vcfh_filter> filters;
-
+            vcfh_fields my_header_fields;
+            std::string my_reference;
+            std::string my_date;
+            std::string my_source;
+            std::string my_version;
+            std::string my_contig;
+            std::vector<vcfh_info> my_infos;
+            std::vector<vcfh_format> my_formats;
+            std::vector<vcfh_filter> my_filters;
+            std::string compose_filters();
+            std::string compose_infos();
+            std::string compse_formats();
+            std::string compose_fields();
     };
 }
