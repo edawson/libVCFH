@@ -18,6 +18,7 @@ be in spec with VCF4.1/4.2.
 Just import vcfheader.hpp into your project and link against the library. This can be done with
 ``-L<PathToVCFHLib> -I<PathToHeader> -lvcfh``. Then, in your code you can build up a vcf header and
 send it to an ostream.  
+
                 #include <vcfheader.hpp>
                 using namespace std;
                 using namespace vcfh;
@@ -33,9 +34,7 @@ send it to an ostream.
                 vi.number = "2";
                 vi.type = "string";
                 vi.description = "Placeholder";
-
                 h.add_info(vi);
-
                 cerr << h << endl;
                 }
 
