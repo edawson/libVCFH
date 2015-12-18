@@ -3,7 +3,7 @@ libVCFHeader
 Eric T Dawson  
 December 2015  
 
-libVCFHeader is a set of data structures you can populate to print a VCf header. It should
+libVCFH is a set of data structures you can populate to print a VCf header. It should
 be in spec with VCF4.1/4.2.
 
 ## Build it  
@@ -11,7 +11,7 @@ be in spec with VCF4.1/4.2.
 
 
 ## Test it  
-`make example.exe; ./example.exe`
+`make test; ./example.exe`
 
 
 ## Use it  
@@ -40,4 +40,4 @@ send it to an ostream.
         }
 
 ## Filing bugs and feature requests
-Use the [github](www.github.com/edawson/libVCFHeader) if you need help!
+Use the [github](www.github.com/edawson/libVCFH) if you need help!
