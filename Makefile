@@ -4,8 +4,11 @@ EXE:=example.exe
 LD_INC_PATH:=-I./
 LD_LIB_PATH:=-L./
 
-$(EXE): main.o vcfheader.o
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LD_INC_PATH) $(LD_LIB_PATH)
+lib: vcfheader.o
+	ar -rs libvcfh.a $<
+
+test: main.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LD_INC_PATH) $(LD_LIB_PATH) -lvcfh
 
 main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LD_INC_PATH) $(LD_LIB_PATH)
@@ -18,3 +21,4 @@ vcfheader.o: vcfheader.cpp vcfheader.hpp
 clean:
 	$(RM) *.o
 	$(RM) $(EXE)
+	$(RM) *.a
