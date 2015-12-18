@@ -19,10 +19,10 @@ Just import vcfheader.hpp into your project and link against the library. This c
 ``-L<PathToVCFHLib> -I<PathToHeader> -lvcfh``. Then, in your code you can build up a vcf header and
 send it to an ostream.  
 
-                #include <vcfheader.hpp>
-                using namespace std;
-                using namespace vcfh;
-                int main(){
+            #include <vcfheader.hpp>
+            using namespace std;
+            using namespace vcfh;
+            int main(){
                 Header h;
                 h.set_date();
                 h.set_source("MyProgram");
@@ -36,7 +36,7 @@ send it to an ostream.
                 vi.description = "Placeholder";
                 h.add_info(vi);
                 cerr << h << endl;
-                }
+            }
 
 ## Filing bugs and feature requests
 Use the [github](www.github.com/edawson/libVCFH) if you need help!
