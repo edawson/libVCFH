@@ -1,4 +1,4 @@
-libVCFHeader
+libVCFH
 ------------
 Eric T Dawson  
 December 2015  
