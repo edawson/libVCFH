@@ -39,4 +39,4 @@ send it to an ostream.
             }
 
 ## Filing bugs and feature requests
-Use the [github](www.github.com/edawson/libVCFH) if you need help!
+Use the [github](https://github.com/edawson/libVCFH) if you need help!
