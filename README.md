@@ -18,26 +18,26 @@ be in spec with VCF4.1/4.2.
 Just import vcfheader.hpp into your project and link against the library. This can be done with
 ``-L<PathToVCFHLib> -I<PathToHeader> -lvcfh``. Then, in your code you can build up a vcf header and
 send it to an ostream.  
-        #include <vcfheader.hpp>
-        using namespace std;
-        using namespace vcfh;
-        int main(){
-            Header h;
-            h.set_date();
-            h.set_source("MyProgram");
-            h.set_reference("my_reference");
-            h.set_contig("Contig");
-            h.set_version("VCF4.2");
-            struct vcfh_info vi;
-            vi.id = "test";
-            vi.number = "2";
-            vi.type = "string";
-            vi.description = "Placeholder";
+                #include <vcfheader.hpp>
+                using namespace std;
+                using namespace vcfh;
+                int main(){
+                Header h;
+                h.set_date();
+                h.set_source("MyProgram");
+                h.set_reference("my_reference");
+                h.set_contig("Contig");
+                h.set_version("VCF4.2");
+                struct vcfh_info vi;
+                vi.id = "test";
+                vi.number = "2";
+                vi.type = "string";
+                vi.description = "Placeholder";
 
-            h.add_info(vi);
+                h.add_info(vi);
 
-            cerr << h << endl;
-        }
+                cerr << h << endl;
+                }
 
 ## Filing bugs and feature requests
 Use the [github](www.github.com/edawson/libVCFH) if you need help!
