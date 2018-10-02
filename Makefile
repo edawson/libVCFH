@@ -19,6 +19,6 @@ vcfheader.o: vcfheader.cpp vcfheader.hpp
 .PHONY: clean
 
 clean:
-	$(RM) *.o
-	$(RM) $(EXE)
-	$(RM) *.a
+	$(RM) -f *.o
+	$(RM) -f $(EXE)
+	$(RM) -f *.a
